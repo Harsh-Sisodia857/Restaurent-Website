@@ -1,0 +1,348 @@
+// importing fonts 
+@font-face {
+    font-family: "Raleway-regular";
+    src: url(../fonts/Raleway-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Raleway-medium";
+    src: url(../fonts/Raleway-Medium.ttf);
+}
+
+@font-face {
+    font-family: "Raleway-bold";
+    src: url(../fonts/Raleway-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Raleway-semibold";
+    src: url(../fonts/Raleway-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: "Raleway-black";
+    src: url(../fonts/Raleway-Black.ttf);
+}
+
+@font-face {
+    font-family: "Raleway-extrabold";
+    src: url(../fonts/Raleway-ExtraBold.ttf);
+}
+
+// making color variable in sass
+
+$-primary:#EEBF00;
+$-secondary:#232B38;
+$-ternary:#6C6C6C;
+$-danger:#FE4545;
+$-pure:#FEFEFE;
+$-light:#F0F0F0;
+$-heaven:#FFFFFF;
+$-footer:#2D333F;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    height: 4000px;
+}
+
+.container {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+
+    .icons a {
+        margin-right: 0.6rem;
+    }
+}
+
+@media (min-width : 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1152px;
+    }
+}
+
+header.topbar {
+    background: $-secondary;
+    color: $-pure;
+    font-family: "Raleway-semibold";
+    padding: 0.75rem 0rem;
+
+    .auth>div a {
+        color: $-pure;
+        text-decoration: none;
+    }
+
+    .auth>div img {
+        margin-right: 0.35rem;
+    }
+
+    .auth .divider {
+        padding: 0 1rem;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.items-center {
+    align-items: center;
+}
+
+nav .top {
+    padding: 1.3rem 0;
+
+    .contact,
+    .time {
+        h5 {
+            font-family: "Raleway-black";
+            margin-bottom: 0.25rem;
+        }
+
+        h6 {
+            font-family: "Raleway-medium";
+            letter-spacing: 0.05rem;
+            font-size: 0.75rem;
+            color: $-ternary;
+        }
+    }
+}
+
+nav .top .contact,
+.time {
+    img {
+        margin-right: 0.7rem;
+    }
+}
+
+nav .navbar {
+    a {
+        text-decoration: none;
+        color: $-secondary;
+        font-family: "Raleway-semibold";
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+        transition: all 0.3s ease;
+
+    }
+}
+
+nav .navbar a.active {
+    background-color: $-primary;
+    color: $-pure;
+}
+
+nav .navbar a:hover {
+    background-color: $-primary;
+    color: $-pure;
+}
+
+// utility class for shadow
+.magic-shadow {
+    position: relative;
+    background: $-heaven;
+
+    ::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 60px;
+        background-image: url('../icons/shadow.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        bottom: -12px;
+        right: 10px;
+        position: absolute;
+        z-index: -1;
+    }
+}
+
+header.hero {
+    height: 500px;
+    background-image: url('../images/hero.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    overflow: hidden;
+    .container{
+        position: relative;
+    }
+    
+    button:first-child{
+        margin-right: 0.5rem;
+    }
+    .welcome span {
+        font-family: "Raleway-bold";
+        color: $-secondary;
+        margin-right: 0.75rem;
+        font-size: 20px;
+    }
+
+    h1 {
+        font-family: "Raleway-extrabold";
+        color: $-secondary;
+        font-size: 2.5rem;
+        margin-bottom: 0.4rem;
+
+        span {
+            color: $-primary;
+        }
+    }
+
+    p {
+        font-family: "Raleway-medium";
+        width: 50%;
+        line-height: 1;
+        margin-bottom: 1rem;
+    }
+    .hero-image img{
+        position: absolute;
+        top: -65px;
+        right: 40px;
+    }
+}
+
+// utility class for buttons
+
+.btn {
+    padding: 0.75rem;
+    border-radius: 4px;
+    line-height: 0.8;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background-color: $-primary;
+    color: $-heaven;
+}
+.btn-primary:hover {
+    background-color: $-heaven;
+    color: $-primary;
+    border: 1px solid $-primary;
+}
+
+.btn-secondary {
+    background-color: $-secondary;
+    color: $-heaven;    
+}
+.btn-secondary:hover {
+    background-color: $-heaven;
+    color: $-secondary;
+    border: 1px solid $-secondary;
+}
+
+section{
+    padding: 4rem 0;
+}
+section.top-products{
+    background: $-light;
+    .food-slider .food-card{
+        background: $-heaven;
+        padding: 1.5rem 0;
+        border-radius: 4px;
+        .stars img{
+            margin-right: 0.15rem;
+            margin-bottom: 0.2rem;
+        }
+        .product-image img{
+            width: 80%;
+            height: 200px;
+            object-fit: contain;
+            padding-bottom: 1rem;
+        }
+        h2{
+            font-family: "Raleway-bold";
+            font-size: 1.3rem;
+            margin-bottom: 0.25rem;
+        }
+    }
+    hr{
+        border : 1px solid $-light;
+        opacity: 0.8;
+        margin: 1rem 0;
+    }
+    .price{
+        font-family: "Raleway-medium";
+        color: $-danger;
+        margin-bottom:1rem ;
+    }
+    button{
+        font-family: "Raleway-medium";
+        color: $-secondary;
+        background: $-heaven;
+        border: 4px solid $-primary;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        width: 50%;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        img{
+            background-color: $-primary;
+            padding : 0.5rem;
+            height : 32px;
+            margin-right: 1.2rem;
+        }
+    }
+}
+
+section.top-products .food-slider .food-card button:hover{
+    background: $-primary;
+    color: $-pure;
+
+}
+.text-center{
+    text-align: center;
+}
+.section-heading{
+    font-family: "Raleway-bold";
+    text-align: center;
+    position: relative;
+    margin-bottom: 4rem;
+}
+.section-heading::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 30px;
+    background-image: url('../icons/hr.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    bottom: -40px;
+}
